@@ -439,7 +439,7 @@ class MiGPT:
                 print("-" * 20)
                 print("问题：" + query + "？")
                 if not self.chatbot.history:
-                    query = f"{self.config.prompt}，{query}"
+                    query = f"{self.config.prompt}\n\n{query}"
                 if self.config.mute_xiaoai:
                     await self.stop_if_xiaoai_is_playing()
                 else:
