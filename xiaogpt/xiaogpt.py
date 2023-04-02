@@ -433,6 +433,8 @@ class MiGPT:
                     self.log.debug("No new xiao ai record")
                     continue
 
+                if query.startswith(WAKEUP_KEYWORD):
+                    query = query[len(WAKEUP_KEYWORD) :].strip()
                 # drop 帮我回答
                 query = re.sub(rf"^({'|'.join(self.config.keyword)})", "", query)
 
