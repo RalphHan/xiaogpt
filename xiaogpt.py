@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+import setproctitle
+setproctitle.setproctitle("xiaogpt")
 from xiaogpt.cli import main
 
 if __name__ == "__main__":

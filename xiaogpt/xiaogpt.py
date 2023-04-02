@@ -206,11 +206,7 @@ class MiGPT:
         if self.config.bot == "gpt3":
             return False
         query = record.get("query", "")
-        return (
-            self.in_conversation
-            and not query.startswith(WAKEUP_KEYWORD)
-            or query.startswith(tuple(self.config.change_prompt_keyword))
-        )
+        return query.startswith(tuple(self.config.change_prompt_keyword))
 
     def _change_prompt(self, new_prompt):
         new_prompt = re.sub(
