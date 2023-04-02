@@ -198,7 +198,6 @@ class MiGPT:
         query = record.get("query", "")
         return (
             self.in_conversation
-            and not query.startswith(WAKEUP_KEYWORD)
             or query.startswith(tuple(self.config.keyword))
         )
 
@@ -440,7 +439,7 @@ class MiGPT:
                 print("-" * 20)
                 print("问题：" + query + "？")
                 if not self.chatbot.history:
-                    query = f"{query}，{self.config.prompt}"
+                    query = f"{self.config.prompt}，{query}"
                 if self.config.mute_xiaoai:
                     await self.stop_if_xiaoai_is_playing()
                 else:
