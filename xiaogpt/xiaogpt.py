@@ -446,7 +446,7 @@ class MiGPT:
                 else:
                     # waiting for xiaoai speaker done
                     await asyncio.sleep(8)
-                await self.do_tts("正在问GPT请耐心等待")
+                await self.do_tts("稍等")
                 try:
                     print(
                         "以下是小爱的回答: ",
