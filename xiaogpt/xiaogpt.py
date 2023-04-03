@@ -422,6 +422,7 @@ class MiGPT:
                     if self.in_conversation:
                         print("结束对话")
                         self.in_conversation = False
+                        self.chatbot.history = []
                     await self.stop_if_xiaoai_is_playing()
                     continue
 
