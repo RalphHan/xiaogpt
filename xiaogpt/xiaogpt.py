@@ -426,6 +426,9 @@ class MiGPT:
                     await self.stop_if_xiaoai_is_playing()
                     continue
 
+                if not self.in_conversation:
+                    self.chatbot.history = []
+
                 # we can change prompt
                 if self.need_change_prompt(new_record):
                     self._change_prompt(new_record.get("query", ""))
